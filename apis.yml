@@ -26,6 +26,10 @@ apis:
     description: >-
       The Conduent API provides access to platform services and data for enterprise integration and automation.
 common:
+  - type: GitHubOrganization
+    url: https://github.com/Conduent
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/conduent
   - type: Website
     url: https://www.conduent.com
 maintainers:
