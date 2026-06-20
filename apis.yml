@@ -2,7 +2,7 @@ aid: conduent
 url: https://raw.githubusercontent.com/api-evangelist/conduent/refs/heads/main/apis.yml
 name: Conduent
 type: Index
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
   - Business Process Services
   - Technology
@@ -17,7 +17,7 @@ apis:
     tags:
       - Business Process Services
       - Technology
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     baseURL: https://api.conduent.com
     humanURL: https://developer.conduent.com
     properties:
