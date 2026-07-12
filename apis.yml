@@ -26,12 +26,16 @@ apis:
     description: >-
       The Conduent API provides access to platform services and data for enterprise integration and automation.
 common:
+  - type: DomainSecurity
+    url: security/conduent-domain-security.yml
   - type: GitHubOrganization
     url: https://github.com/Conduent
   - type: LinkedIn
     url: https://www.linkedin.com/company/conduent
   - type: Website
     url: https://www.conduent.com
+  - url: https://www.conduent.com/feed/
+    type: Blog
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
