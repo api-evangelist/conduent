@@ -1,0 +1,116 @@
+specification: API Commons Conformance
+specificationVersion: '0.1'
+generated: '2026-09-19'
+method: searched
+source: >-
+  https://www.conduent.com/government-solutions/medicaid-public-health-solutions/medicaid-program-management/interoperability/,
+  https://help.knowledgeconnection.conduent.info/,
+  https://portal.mt.healthinteractive.net/icapPortal/module/INTEROP
+provider: Conduent
+providerId: conduent
+name: Conduent Standards Conformance
+description: >-
+  Conduent makes domain-standard claims in prose on its own site and delivers standards-based
+  surfaces inside state Medicaid programs, but publishes no contract of its own against which any of
+  them can be verified. Every entry below therefore records what Conduent states, with the exact
+  page it is stated on, and sets conforms only where the claim is the company's own published
+  statement about a product it operates. Nothing here is derived from a specification, because no
+  Conduent specification is published.
+conformance:
+  - id: hl7-fhir-r4
+    name: HL7 FHIR 4.0.1
+    conforms: true
+    basis: vendor-stated
+    evidence: >-
+      https://www.conduent.com/government-solutions/medicaid-public-health-solutions/medicaid-program-management/interoperability/
+      -- "CMS-regulated payers are required to make health information more easily available to
+      patients by leveraging APIs and Fast Healthcare Interoperability Resources (FHIR) technology"
+      and "We provide a secure platform for members and 3rd party app developers to exchange patient
+      claim data ... with the mandated APIs." Conduent-built Medicaid interoperability surfaces are
+      documented by the contracting state, not by Conduent: Montana's MES developer documentation
+      (portal.mt.healthinteractive.net, HTTP 200) states the APIs "are based on the Health Level 7
+      (HL7) Fast Healthcare Interoperability Resources (FHIR) 4.0.1 standards" and publishes Patient
+      Access, Provider Directory and Drug Formulary developer documentation under the state's name.
+    note: >-
+      The Montana surface is state-branded and its operator attribution is not stated on the page, so
+      it is cited as corroboration of the product category, not registered as a Conduent contract.
+  - id: cms-9115-f
+    name: CMS Interoperability and Patient Access Final Rule (CMS-9115-F)
+    conforms: true
+    basis: vendor-stated
+    evidence: >-
+      https://www.conduent.com/government-solutions/medicaid-public-health-solutions/medicaid-program-management/interoperability/
+      -- Conduent states its pre-built solution is deployable in 10-12 weeks "ensuring payers meet
+      the mandated CMS timelines". Corroborated by the company's own newsroom:
+      https://www.news.conduent.com/news/new-hampshire-selects-conduent-to-provide-medicaid-beneficiaries-with-improved-access-to-healthcare-information
+      (2021-06-02) -- "The contract also brings New Hampshire into compliance with the
+      Interoperability and Patient Access Final Rule."
+  - id: ims-lti
+    name: IMS Learning Tools Interoperability (LTI 1.x / 2.0)
+    conforms: true
+    basis: vendor-stated
+    evidence: >-
+      https://help.knowledgeconnection.conduent.info/ -- Knowledge Connection ships an LTI learning
+      activity, LTI lesson/section resources and an admin "Manage LTI Tool Providers" permission;
+      Sprint 46 records "New Learning Activity - Learning Tools Interopability (LTI) version 2" and
+      later sprints record LTI launch parameters such as tool_consumer_instance_name.
+  - id: xapi-tincan
+    name: xAPI / Experience API (TinCan)
+    conforms: true
+    basis: vendor-stated
+    evidence: >-
+      https://help.knowledgeconnection.conduent.info/ -- "In order to use a Tin Can package, you must
+      first configure an LRS Endpoint (Learning Record Store)". Knowledge Connection is the xAPI
+      CLIENT here: it writes statements to the customer's LRS rather than serving one.
+  - id: scorm-aicc
+    name: SCORM 1.2 / SCORM 2004 / AICC
+    conforms: true
+    basis: vendor-stated
+    evidence: >-
+      https://help.knowledgeconnection.conduent.info/ -- Sprint 166 (2025-06-16): content packages
+      that are "AICC, SCORM 1.2, or SCORM 2004" and report a score now feed the enrollment score.
+  - id: saml2
+    name: SAML 2.0 single sign-on
+    conforms: true
+    basis: vendor-stated
+    evidence: >-
+      https://help.knowledgeconnection.conduent.info/ -- Knowledge Connection supports SP-initiated
+      SSO with SAML 2, per-portal SAML2 configuration, and rotates a SAML2 signing certificate on a
+      published schedule.
+  - id: oauth2
+    name: OAuth 2.0
+    conforms: false
+    basis: not-published
+    evidence: >-
+      No Conduent-operated OAuth authorization server or protected-resource metadata was found:
+      /.well-known/oauth-authorization-server and /.well-known/oauth-protected-resource miss on every
+      host probed (see well-known/conduent-well-known.yml). Knowledge Connection consumes OAuth v2
+      APIs of third parties (GoToWebinar/GoToMeeting, Google Apps SSO) but does not publish one.
+  - id: rfc9457
+    name: RFC 9457 problem+json
+    conforms: false
+    basis: no-contract
+    evidence: No Conduent OpenAPI or error reference is published; nothing to assert against.
+  - id: rfc8594
+    name: RFC 8594 Sunset header
+    conforms: false
+    basis: no-contract
+    evidence: No deprecation policy or Sunset/Deprecation header documentation is published.
+domain_standard:
+  markets:
+    - market: healthcare payer / Medicaid
+      standard: HL7 FHIR R4 (4.0.1) under CMS-9115-F
+      declared_in: vendor prose on conduent.com, not in a Conduent-published contract
+      contract_evidence: none
+    - market: corporate learning / LMS
+      standard: IMS LTI, xAPI, SCORM/AICC
+      declared_in: Knowledge Connection product release history (help.knowledgeconnection.conduent.info)
+      contract_evidence: none
+  note: >-
+    The 0.12.0 domain_standard_conformance check reads the CONTRACT, not a prose claim. Conduent
+    publishes no contract, so no entry here carries contract evidence and none should be credited as
+    a contract-declared domain standard. This file records the claims and where they are made so a
+    later pass can verify them if Conduent ever publishes a spec.
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

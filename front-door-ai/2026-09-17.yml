@@ -1,0 +1,32 @@
+# Front Door AI Index — conduent — 2026-09-17
+# AI vocabulary counted on the provider's root page. Generated; do not edit.
+# `score` is null unless ownership is `own` — see front_door_ai.py.
+front_door_ai:
+  slug: conduent
+  lexicon_version: '1.0'
+  probed_at: '2026-09-17'
+  host: www.conduent.com
+  final_host: www.conduent.com
+  ownership: own
+  owner: conduent
+  shares_host_with: null
+  inherited_from: null
+  verdict: scored
+  score: 37
+  host_score: 37
+  density: 8.28
+  words: 4471
+  tiers:
+    agentic: 2
+    core: 35
+    model: 0
+  ambiguous: 28
+  top_terms:
+    AI: 25
+    automation: 24
+    gen ai: 5
+    generative ai: 3
+    intelligence: 3
+    agentic: 2
+    artificial intelligence: 2
+    smart: 1

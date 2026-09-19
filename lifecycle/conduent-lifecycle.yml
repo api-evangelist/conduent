@@ -1,0 +1,54 @@
+specification: API Commons Lifecycle
+specificationVersion: '0.1'
+generated: '2026-09-19'
+method: searched
+source: >-
+  https://help.knowledgeconnection.conduent.info/ (release history),
+  https://www.conduent.com/contact-us/ (support), https://www.conduent.com/website-terms-and-conditions/
+provider: Conduent
+providerId: conduent
+name: Conduent API Lifecycle
+description: >-
+  Conduent publishes no API versioning policy, no deprecation policy, no RFC 8594 Sunset/Deprecation
+  header documentation, no public uptime SLA and no status page. Programmatic access is delivered
+  inside enterprise BPO and managed-services contracts, where lifecycle commitments are contractual
+  rather than published. The one dated release cadence reachable anonymously is the Knowledge
+  Connection sprint history. This file records that absence as measured, not as assumed.
+versioning:
+  scheme: not published
+  mechanism: not published
+  docs: null
+  notes: >-
+    No API version header, dated version or version-negotiation mechanism is documented on any
+    anonymous Conduent surface. The Knowledge Connection release history numbers product sprints,
+    not API versions.
+  product_release_history: https://help.knowledgeconnection.conduent.info/
+deprecation:
+  policy_url: null
+  sunset_header: false
+  deprecation_header: false
+  notes: >-
+    No deprecation or sunset policy is published. The only observed removal notice is in the
+    Knowledge Connection release history, Sprint 167 (2025-07-21): "removed support for the
+    original/early Personify API (all clients use Data Services now)" -- a retirement announced
+    after the fact in a product release note, with no advance-notice window stated.
+sla:
+  url: null
+  public_uptime_target: null
+  notes: >-
+    No public uptime target. Availability commitments sit in the customer's enterprise services
+    contract; the website terms and conditions (revised January 2017) disclaim warranties for the
+    public site and make no service commitment.
+status_page: null
+status_page_notes: >-
+  No status.conduent.com or equivalent resolves, and no status page is linked from the corporate
+  site, the Insights Hub or the Knowledge Connection help site.
+support:
+  channel: https://www.conduent.com/contact-us/
+  phone: 1-844-ONE-CNDT (663-2638), Mon-Fri 08:00-19:00 Eastern
+  notes: General corporate contact routing; there is no developer support channel.
+deprecated_operations: []
+deprecated_operations_note: No OpenAPI exists in this repository, so no deprecated operations can be derived.
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

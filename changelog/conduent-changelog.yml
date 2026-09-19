@@ -1,0 +1,68 @@
+specification: API Commons ChangeLog
+specificationVersion: '0.1'
+generated: '2026-09-19'
+method: searched
+source: https://help.knowledgeconnection.conduent.info/
+provider: Conduent
+providerId: conduent
+name: Conduent Knowledge Connection — Release History
+description: >-
+  Conduent publishes no API changelog. It does publish one anonymous, dated product release history:
+  the Knowledge Connection "Release History" page, which lists 133 sprints from Sprint 33 (2012-10-03)
+  to Sprint 171 (2026-01-19). The scheme is sprint-numbered, not API-versioned, and the entries
+  describe product behaviour rather than contract changes; there is no version header, no dated API
+  version and no breaking-change policy anywhere on the surface. Recent entries only, transcribed
+  verbatim in summary.
+docs: https://help.knowledgeconnection.conduent.info/
+versioning:
+  scheme: sprint-numbered product releases (no API version)
+  header: none published
+  current: Sprint 171
+  current_date: '2026-01-19'
+  detail: lifecycle/conduent-lifecycle.yml
+  span: Sprint 33 (2012-10-03) through Sprint 171 (2026-01-19), 133 entries
+entries:
+  - version: Sprint 171
+    date: '2026-01-19'
+    latest: true
+    highlights:
+      - Publishing Certification, Subscriptions and Conferences now queues in the Validation/Publishing Status admin area
+      - Video Library shows recent transcoding successes and failures below the grid
+      - Video Library Export expanded to two tabs (times out above ~500 videos)
+  - version: Sprint 170
+    date: '2025-11-17'
+    highlights:
+      - Learner Subscription Detail Active tab now shows only products currently in the subscription
+      - New Inactive tab for incomplete enrollments in removed products
+  - version: Sprint 169
+    date: '2025-10-20'
+    highlights:
+      - Enrollment code admin grid filters by first name, last name or email
+      - Personify deep links fixed
+      - 'Pain Management Pharmacy added to BPS certification areas'
+  - version: Sprint 168
+    date: '2025-09-08'
+    highlights:
+      - Assessment and Content Package activities can bypass lesson/enrollment completion on a passing pre-test
+  - version: Sprint 167
+    date: '2025-07-21'
+    highlights:
+      - Native login accounts moved to BCrypt password hashing, rehashed on next login
+      - Support removed for the original/early Personify API (all clients on Data Services)
+  - version: Sprint 166
+    date: '2025-06-16'
+    highlights:
+      - Content Package learning activities are now scorable against AICC/SCORM 1.2/SCORM 2004 reported scores
+  - version: Sprint 165
+    date: '2025-05-19'
+    highlights:
+      - SSL certificate expiry reminder notifications for configured portals
+  - version: Sprint 164
+    date: '2025-04-14'
+    highlights:
+      - Product detail page shows all rate categories
+      - Content Security Policy update process hardened
+breaking_change_policy: none published
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

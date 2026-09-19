@@ -27,38 +27,121 @@ accessModel:
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/conduent.png
 tags:
-  - Business Process Services
-  - Technology
-description: >-
-  Conduent is a major US corporation and Fortune 1000 company. The Conduent API provides programmatic access to its platform services, data, and integrations for enterprise customers and partners.
+- Business Process Services
+- Technology
+- Government
+- Healthcare
+- Transportation
+- Financial Services
+- Customer Experience
+- Learning
+- Webhooks
+description: 'Conduent Incorporated (Nasdaq: CNDT) is a US business process services and solutions company
+  headquartered in Florham Park, New Jersey, delivering customer experience management, finance and procurement,
+  human capital, integrated digital solutions, legal and compliance analytics, government and Medicaid
+  services, transportation and tolling, banking and lending, and healthcare business solutions. Its work
+  is sold as managed services and BPO engagements rather than as a self-serve software product: Conduent
+  publishes no developer portal, no API reference and no machine-readable contract, and programmatic access
+  is provisioned inside enterprise services contracts. The one publicly documented interface is the webhook
+  event catalog of its Knowledge Connection learning platform.'
 created: '2026-04-19'
-modified: '2026-04-19'
+modified: '2026-09-19'
 specificationVersion: '0.23'
 apis:
-  - aid: conduent:conduent-api
-    name: Conduent API
-    tags:
-      - Business Process Services
-      - Technology
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    baseURL: https://api.conduent.com
-    humanURL: https://developer.conduent.com
-    properties:
-      - url: https://developer.conduent.com/docs
-        type: Documentation
-    description: >-
-      The Conduent API provides access to platform services and data for enterprise integration and automation.
+- aid: conduent:conduent-knowledge-connection
+  name: Conduent Knowledge Connection
+  tags:
+  - Learning
+  - Webhooks
+  - Technology
+  - Business Process Services
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  baseURL: https://{portal}.knowledgeconnection.conduent.com
+  humanURL: https://help.knowledgeconnection.conduent.info/
+  description: 'Knowledge Connection (marketed to learners as Learner Community) is Conduent''s learning
+    platform, deployed one portal per customer on a subdomain of knowledgeconnection.conduent.com; the
+    base URL is templated because the tenant segment is required (the apex does not resolve; pmi.knowledgeconnection.conduent.com
+    returns HTTP 200). It is the only Conduent product with an anonymously readable integration surface:
+    eight documented webhook events, a contract-granted partner Request Launch URL call, and LTI, xAPI/TinCan,
+    SCORM/AICC and SAML 2.0 support. Event names and trigger semantics are public; payload schemas, signing
+    and retry behaviour are not, and no OpenAPI or AsyncAPI is published.'
+  properties:
+  - url: https://help.knowledgeconnection.conduent.info/
+    type: Documentation
+  - url: asyncapi/conduent-knowledge-connection-webhooks.yml
+    type: Webhooks
+  - url: changelog/conduent-changelog.yml
+    type: ChangeLog
 common:
-  - type: DomainSecurity
-    url: security/conduent-domain-security.yml
-  - type: GitHubOrganization
-    url: https://github.com/Conduent
-  - type: LinkedIn
-    url: https://www.linkedin.com/company/conduent
-  - type: Website
-    url: https://www.conduent.com
-  - url: https://www.conduent.com/feed/
-    type: Blog
+- type: DomainSecurity
+  url: security/conduent-domain-security.yml
+- type: GitHubOrganization
+  url: https://github.com/Conduent
+- type: LinkedIn
+  url: https://www.linkedin.com/company/conduent
+- type: Website
+  url: https://www.conduent.com
+- type: Blog
+  url: https://insights.conduent.com/conduent-blog
+- type: Newsroom
+  url: https://www.news.conduent.com/
+- type: Leadership
+  url: https://www.conduent.com/conduent-leadership/
+- type: Support
+  url: https://www.conduent.com/contact-us/
+- type: PrivacyPolicy
+  url: https://www.conduent.com/privacy-policy/
+- type: TermsOfService
+  url: https://www.conduent.com/website-terms-and-conditions/
+- type: Webhooks
+  url: asyncapi/conduent-knowledge-connection-webhooks.yml
+- type: ChangeLog
+  url: changelog/conduent-changelog.yml
+- type: Lifecycle
+  url: lifecycle/conduent-lifecycle.yml
+- type: Packages
+  url: packages/conduent-packages.yml
+- type: Conformance
+  url: conformance/conduent-conformance.yml
+- type: Conventions
+  url: conventions/conduent-conventions.yml
+- type: LLMsTxt
+  url: llms/conduent-llms.txt
+- type: RegulatoryPosture
+  url: regulatory/conduent-regulatory-posture.yml
+- type: DataSubjectRequest
+  url: regulatory/conduent-regulatory-posture.yml
+- type: Plans
+  url: plans/conduent-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/conduent-rate-limits.yml
 maintainers:
-  - FN: Kin Lane
-    email: kin@apievangelist.com
+- FN: Kin Lane
+  email: kin@apievangelist.com
+x-enrichment:
+  date: '2026-09-19'
+  status: minimal
+  artifacts_added: 8
+  pass: local-v3
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: 'Conduent sells BPO and managed services, not software with a developer program: both hosts
+    the record named -- api.conduent.com and developer.conduent.com -- return NXDOMAIN, and full contract
+    discovery across www.conduent.com, insights.conduent.com and the Knowledge Connection help host found
+    no OpenAPI, GraphQL, MCP, agent card or well-known document; the only public integration surface is
+    the Knowledge Connection webhook event list.'
+  evidence:
+  - url: https://developer.conduent.com
+    status: NXDOMAIN
+  - url: https://api.conduent.com
+    status: NXDOMAIN
+  - url: https://www.conduent.com/openapi.json
+    status: 404
+  - url: https://www.conduent.com/llms.txt
+    status: 404
+  - url: https://www.conduent.com/.well-known/security.txt
+    status: 404
+  - url: https://help.knowledgeconnection.conduent.info/help/admin/integrations/webhooks
+    status: 200
+  checked: '2026-09-19'

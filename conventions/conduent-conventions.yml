@@ -1,0 +1,68 @@
+specification: API Commons Conventions
+specificationVersion: '0.1'
+generated: '2026-09-19'
+method: searched
+source: >-
+  Searched every anonymously reachable Conduent surface (corporate site, Insights Hub, Knowledge
+  Connection help site) for a developer reference documenting cross-cutting API semantics. None
+  exists; no OpenAPI is published, so nothing can be derived either.
+provider: Conduent
+providerId: conduent
+name: Conduent API Conventions
+description: >-
+  Conduent documents no cross-cutting API semantics anywhere a machine or an unauthenticated human
+  can read them. This artifact records that as a measurement: every block below is "not published"
+  against a named search, not an unchecked blank. It is NOT evidence of any convention, and no
+  Idempotency pointer is emitted from it -- the scorer's idempotency dimension must read zero here,
+  because a provider with no published write surface has published no replay protection.
+auth:
+  style: not published
+  note: >-
+    No authentication reference on any public surface. Knowledge Connection documents SAML 2.0 SSO
+    for human login to tenant portals, which is not API authentication.
+idempotency:
+  coverage: none
+  header: null
+  scope: []
+  retention: null
+  note: >-
+    No idempotency mechanism is documented. coverage is none rather than na because Conduent
+    operates write surfaces (enrollment, payments disbursement, permit and claims processing) inside
+    customer contracts -- they are simply not publicly specified.
+pagination:
+  style: not published
+  params: []
+  response_fields: []
+field_expansion: not published
+metadata: not published
+request_id_tracing: not published
+versioning:
+  style: not published
+  detail: lifecycle/conduent-lifecycle.yml
+error_envelope:
+  shape: not published
+  rfc9457: false
+  detail: No error reference is published; errors/ holds no problem-type catalog for this provider.
+rate_limit_signaling:
+  headers: []
+  status_on_exhaustion: null
+  detail: rate-limits/conduent-rate-limits.yml
+  note: >-
+    No published limits and no documented response headers. The existing rate-limits artifact
+    records contract-scoped throttling with no public thresholds.
+dry_run_mode:
+  supported: false
+  basis: not published
+reversibility:
+  grade: not published
+  surfaces: []
+  note: >-
+    No reversal operation, window or policy is documented on any public Conduent surface, and there
+    is no contract from which write operations could be enumerated. This is NOT `na`: Conduent runs
+    consequential write surfaces (benefit disbursement, tolling charges, claims adjudication) whose
+    reversal semantics certainly exist contractually. They are unpublished, which is a different
+    finding from a read-only API having nothing to reverse. NEVER assert a window the docs do not
+    state -- none are stated here, so none are recorded.
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

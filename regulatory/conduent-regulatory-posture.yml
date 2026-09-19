@@ -1,0 +1,98 @@
+specification: API Commons RegulatoryPosture
+specificationVersion: '0.1'
+generated: '2026-09-19'
+method: searched
+probe: true
+provider: Conduent
+providerId: conduent
+name: Conduent Regulatory Posture
+description: >-
+  Harvest of the horizontal regulatory signals Conduent publishes on anonymously reachable surfaces.
+  Only one clears the substance bar: the privacy policy documents data subject rights and names the
+  offices that action them. There is no accessibility conformance report, no subprocessor list, no
+  SBOM, no trust center, no transparency report, no AI transparency statement, no data-residency
+  documentation and no stated support lifetime anywhere on a public Conduent host -- each one
+  searched and not found, not assumed absent. www.conduent.com sits behind an Imperva bot challenge
+  that answers HTTP 200 with a "Pardon Our Interruption" page for unknown paths, so conventional-path
+  probing on that host is uninformative; every finding below was confirmed by reading the page body
+  through a browser-equivalent fetch, never from a status code.
+signals:
+  data_subject_request:
+    url: https://www.conduent.com/privacy-policy/
+    updated: '2023-10-15'
+    contacts:
+      - DataPrivacy@Conduent.com (Chief Privacy Officer)
+      - ConduentDPO@conduent.com (EEA/UK Data Protection Officer)
+      - https://www.conduent.com/ethicshelpline
+    note: >-
+      No dedicated request form or portal: the policy states "You may have a right to access,
+      correct, update or request deletion of your personal information ... you can do so by
+      contacting us using the contact details provided under the 'How to contact us' heading above",
+      and routes requests to named regional data protection offices (Brasil, Philippines, EEA, UK,
+      Poland) plus an Ethics Helpline. Regional DPOs and a California minors-removal right (Cal.
+      Bus. & Prof. Code 22581) are both stated.
+signals_searched_not_found:
+  - signal: global_privacy_control
+    searched: https://www.conduent.com/privacy-policy/
+    finding: >-
+      NOT recorded as honored. The policy states "Conduent will honor do not track signals sent from
+      browsers where it is clear a user has made individual consent to block tracking technologies"
+      -- a DNT statement, not a Global Privacy Control commitment. GPC is not named anywhere. Per
+      the contract, honored is set only from a published GPC statement, so no signal and no pointer
+      is emitted. A third-party behavioural-advertising opt-out tool is linked
+      (preferences-mgr.truste.com, HTTP 200); it is an ad-industry preference manager, not a
+      universal opt-out signal commitment.
+  - signal: accessibility_conformance
+    searched: https://www.conduent.com/accessibility/
+    finding: No accessibility statement, VPAT or WCAG/EN 301 549 conformance report is served; the path returns the bot-challenge page and no accessibility report was found by search.
+  - signal: subprocessors
+    searched: https://www.conduent.com/legal/subprocessors/, https://www.conduent.com/privacy-policy/
+    finding: No subprocessor list published; the privacy policy does not address subprocessors at all.
+  - signal: sbom
+    searched: https://www.conduent.com/security/, registry and web search
+    finding: No SBOM in any format. Never derived -- search only.
+  - signal: support_lifetime
+    searched: https://help.knowledgeconnection.conduent.info/
+    finding: >-
+      No stated support period. The Knowledge Connection release history announces one retirement
+      after the fact (Sprint 167, 2025-07-21, the early Personify API) with no notice window.
+  - signal: transparency_report
+    searched: https://www.conduent.com/, https://www.news.conduent.com/
+    finding: No transparency report.
+  - signal: ai_transparency
+    searched: https://www.conduent.com/, https://insights.conduent.com/
+    finding: >-
+      Conduent markets AI-enabled services and blogs about agentic AI, but publishes no AI
+      transparency disclosure, model card or training-data statement. Marketing copy mentioning AI
+      is explicitly NOT treated as a signal.
+  - signal: training_data_summary
+    searched: https://www.conduent.com/
+    finding: None published.
+  - signal: data_residency
+    searched: https://www.conduent.com/privacy-policy/
+    finding: >-
+      No residency commitment or region list. The policy discloses international transfers in the
+      opposite direction -- "Some of these countries may not be deemed to provide the same level of
+      protections for your personal information as the country in which you are located".
+  - signal: incident_notification
+    searched: https://www.conduent.com/legal/dpa/, https://www.conduent.com/privacy-policy/
+    finding: No anonymously reachable DPA and no stated breach-notification SLA.
+  - signal: age_assurance
+    searched: https://www.conduent.com/privacy-policy/
+    finding: No age assurance or age signals documentation.
+  - signal: notice_and_action
+    searched: https://www.conduent.com/
+    finding: No DSA-style content reporting mechanism (not a hosting/platform business).
+  - signal: exit_assistance
+    searched: https://www.conduent.com/
+    finding: No published export/portability or cloud-switching documentation.
+related_context:
+  - name: Corporate Social Responsibility Report 2025
+    url: https://downloads.conduent.com/content/usa/en/document/Conduent-Corporate-Social-Responsibility-Report-2025.pdf
+    status: 200
+    note: >-
+      A published, anonymously reachable corporate report. It is ESG reporting, not one of the
+      regulatory signals above, and is recorded here as context only -- no pointer is emitted for it.
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

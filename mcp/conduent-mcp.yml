@@ -1,0 +1,27 @@
+specification: API Commons MCPServer
+specificationVersion: '0.1'
+generated: '2026-09-19'
+method: searched
+source: >-
+  DNS resolution of mcp.conduent.com (NXDOMAIN) plus web search of the Conduent corporate site,
+  Insights Hub, newsroom and the public package registries.
+provider: Conduent
+providerId: conduent
+name: Conduent MCP
+description: >-
+  Conduent ships no Model Context Protocol server, hosted or local. mcp.conduent.com does not
+  resolve, no npm/PyPI package publishes one, and nothing on the corporate site, the Insights Hub or
+  the newsroom announces one. No candidate tool list is derived either: deriving one requires an
+  OpenAPI to bind tools to, and this repository holds no contract because Conduent publishes none.
+status: none
+deployment:
+  mode: none
+  endpoint: null
+  install: null
+  package: null
+  auth: unknown
+  verified: searched
+tools: []
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

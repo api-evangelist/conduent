@@ -1,0 +1,84 @@
+specification: API Commons Webhooks
+specificationVersion: '0.1'
+generated: '2026-09-19'
+method: searched
+source: https://help.knowledgeconnection.conduent.info/help/admin/integrations/webhooks
+provider: Conduent
+providerId: conduent
+name: Conduent Knowledge Connection — Webhook Catalog
+description: >-
+  Conduent Knowledge Connection (marketed to learners as "Learner Community") is the one Conduent
+  product with a publicly readable event surface. Its help site is an anonymous, unauthenticated host
+  whose pages carry "Powered by Knowledge Connection(TM) - Copyright (C) Conduent, Inc. -
+  www.conduent.com", which is how ownership was established. The events below are transcribed from
+  the product's own dated release history; the help site publishes no AsyncAPI document, no payload
+  schema and no signing/retry documentation, so nothing beyond event names, their trigger semantics
+  and the release that shipped each one is recorded here. NO AsyncAPI is emitted for this provider:
+  authoring one would fabricate channels, payloads and bindings the provider has never published.
+ownership:
+  note: >-
+    help.knowledgeconnection.conduent.info is served from conduent.info, a Conduent-controlled
+    domain, and every page footer names Conduent, Inc. as copyright holder with www.conduent.com as
+    the company site. Knowledge Connection is also described as a Conduent product in the
+    first-party brochure at downloads.conduent.com (HTTP 200).
+  evidence:
+    - url: https://help.knowledgeconnection.conduent.info/help/admin/integrations/webhooks
+      status: 200
+    - url: https://downloads.conduent.com/content/usa/en/brochure/knowledge-connection.pdf
+      status: 200
+asyncapi_published: false
+delivery:
+  style: HTTP callback to a subscriber-supplied URL, configured per portal in the Admin Dashboard
+  configured_in: Admin Dashboard > Social > Webhooks
+  third_party_management: >-
+    Webhooks created through the Zapier integration appear in a separate "Managed By Third Party"
+    table and cannot be edited from within Learner Community.
+  signing: not documented publicly
+  retries: not documented publicly
+  payload_schema: not documented publicly
+events:
+  - name: Enrollment Failed
+    shipped: Sprint 76 (2015-07-27)
+  - name: Enrollment Completed
+    shipped: Sprint 76 (2015-07-27)
+  - name: Enrollment Incomplete/Not Started and Idle for X Days
+    shipped: Sprint 76 (2015-07-27)
+    note: >-
+      Later extended (as the "Account Idle Webhook") with an explicit Idle Time option, and again to
+      cover learners who have never logged in.
+  - name: Learning Activity Failed
+    shipped: Sprint 76 (2015-07-27)
+  - name: Learning Activity Completed
+    shipped: Sprint 76 (2015-07-27)
+  - name: Learning Activity Incomplete/Not Started and Idle for X Days
+    shipped: Sprint 76 (2015-07-27)
+  - name: Learner Updated
+    shipped: Sprint 84 (2016-11-02)
+    trigger: Fires whenever a learner record is updated within Learner Community.
+  - name: Assessment Submitted
+    trigger: Fires when an assessment attempt is submitted.
+    note: Release date not stated on the page; recorded without one rather than guessed.
+related_interfaces:
+  - name: Partner Request Launch URL API
+    type: REST (undocumented publicly)
+    shipped: Sprint 141 (2022-06-12)
+    description: >-
+      A client's partner may be granted permission to call a "Request Launch URL" API to obtain a
+      launch URL for a specific Subscription and Product, then redirect their user to it. Completion
+      is reported back to both the client's and the partner's systems in near-real-time. Permission
+      is granted per contract; no public reference, base URL or specification is published.
+  - name: TinCan / xAPI Learning Record Store endpoint
+    type: xAPI (consumed, not served)
+    description: >-
+      Administrators configure an LRS Endpoint so a TinCan (xAPI) learning activity communicates
+      directly with the customer's own Learning Record Store. Knowledge Connection is the xAPI
+      client here, not the provider of the endpoint.
+  - name: LTI Tool Provider integration
+    type: IMS LTI (v1 and v2)
+    description: >-
+      Learning activities and lesson resources can embed LTI resources; administrators manage LTI
+      Tool Providers from the admin dashboard. LTI 1.x/2.0 is a domain standard for the education
+      market; see conformance/conduent-conformance.yml.
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

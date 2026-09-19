@@ -1,0 +1,55 @@
+specification: API Commons Packages
+specificationVersion: '0.1'
+generated: '2026-09-19'
+method: searched
+source: >-
+  Registry searches (registry.npmjs.org, pypi.org, api.nuget.org, rubygems.org, search.maven.org,
+  api.github.com) plus the Conduent corporate site and the Knowledge Connection help site.
+provider: Conduent
+providerId: conduent
+name: Conduent Client Libraries
+description: >-
+  Conduent publishes NO first-party client SDK on any public package registry. The registries were
+  searched for "conduent" on 2026-09-19: npm returns one third-party component library, PyPI has no
+  conduent/conduent-api project, RubyGems and Maven Central return nothing, and the GitHub
+  organization github.com/Conduent exists but hosts 0 public repositories. The single package whose
+  registry metadata names Conduent as author is a test-support library for an internal project, not
+  a client for any Conduent API, so official is false and no SDKs pointer is emitted.
+official_sdk_count: 0
+packages:
+  - language: csharp
+    registry: nuget
+    name: CAP.TestingLibrary
+    url: https://www.nuget.org/packages/CAP.TestingLibrary/
+    version: 1.0.13
+    published: '2023-04-12'
+    official: false
+    authors: Conduent
+    project_url: https://conduent.com/
+    note: >-
+      Authored by "Conduent" per NuGet registry metadata and pointing its projectUrl at
+      conduent.com, but described only as "CAP Testing Library" -- a test-support library, with no
+      documented Conduent API it is a client for, no public repository and no docs page referencing
+      it. Recorded as a measured registry finding, not as an SDK; last published 2023-04-12.
+registries_checked:
+  - registry: npm
+    query: conduent
+    result: no first-party package (one unrelated third-party CAP component library)
+  - registry: pypi
+    query: conduent, conduent-api
+    result: 404 on both project metadata endpoints
+  - registry: nuget
+    query: conduent
+    result: CAP.TestingLibrary 1.0.13 (see above), not a client SDK
+  - registry: rubygems
+    query: conduent
+    result: no packages
+  - registry: maven-central
+    query: conduent
+    result: no artifacts
+  - registry: github
+    query: org Conduent
+    result: organization exists, public_repos = 0
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

@@ -1,0 +1,194 @@
+generated: '2026-09-19'
+method: probed
+source: >-
+  Direct unauthenticated HTTPS probes of every host the record knows: the registrable domain and
+  www, the Insights Hub (docs/blog host), the Knowledge Connection help host, and the two hosts the
+  prior record named as API base / developer portal (api.conduent.com, developer.conduent.com), which
+  do not resolve in DNS. No MCP host exists for this provider.
+name: Conduent .well-known Probe
+description: >-
+  No .well-known document is served on any Conduent host. www.conduent.com answers a hard 404 (the
+  172,397-byte WordPress 404 page) for security.txt, openapi.json and llms.txt, and answers HTTP 200
+  with a 6,183-byte Imperva "Pardon Our Interruption" bot-challenge page for every other
+  /.well-known/* path -- including the negative-control path that cannot exist -- so none of those
+  200s is a document. help.knowledgeconnection.conduent.info is an ASP.NET catch-all that returns
+  its ~356 KB help page for extension-less paths and a hard 404 for .json/.txt paths.
+  insights.conduent.com returns a hard 404 for everything. NO WellKnown or SecurityTxt pointer is
+  emitted for this provider: nothing here is a hit.
+hit_count: 0
+path_echo_control: failed
+soft_404_control:
+  url: https://www.conduent.com/.well-known/conduent-negative-control-9f2a7c1e.json
+  status: 200
+  content_type: text/html; charset=UTF-8
+  bytes: 6183
+  note: >-
+    Control probe. Any 200 on www.conduent.com with this byte count is the Imperva bot-challenge
+    page ("Pardon Our Interruption"), not a served document.
+hosts:
+  - host: https://www.conduent.com
+    note: Imperva bot challenge answers 200 (6,183 bytes, text/html) for every non-page path; recorded as a miss.
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 200
+        hit: false
+        note: bot-challenge HTML, not a document
+      - path: /.well-known/oauth-authorization-server
+        status: 200
+        hit: false
+        note: bot-challenge HTML, not a document
+      - path: /.well-known/oauth-protected-resource
+        status: 200
+        hit: false
+        note: bot-challenge HTML, not a document
+      - path: /.well-known/api-catalog
+        status: 200
+        hit: false
+        note: bot-challenge HTML, not a document
+      - path: /.well-known/ai-plugin.json
+        status: 200
+        hit: false
+        note: bot-challenge HTML, not a document
+      - path: /.well-known/ucp.json
+        status: 200
+        hit: false
+        note: bot-challenge HTML, not a document
+      - path: /.well-known/acp.json
+        status: 200
+        hit: false
+        note: bot-challenge HTML, not a document
+      - path: /.well-known/aauth-resource.json
+        status: 200
+        hit: false
+        note: bot-challenge HTML, not a document
+      - path: /.well-known/apis.json
+        status: 200
+        hit: false
+        note: bot-challenge HTML, not a document
+      - path: /apis.json
+        status: 200
+        hit: false
+        note: bot-challenge HTML, not a document
+      - path: /apis.yml
+        status: 200
+        hit: false
+        note: bot-challenge HTML, not a document
+      - path: /.well-known/agent-card.json
+        status: 200
+        hit: false
+        note: bot-challenge HTML, not a document
+      - path: /.well-known/agent.json
+        status: 200
+        hit: false
+        note: bot-challenge HTML, not a document
+      - path: /llms.txt
+        status: 404
+      - path: /openapi.json
+        status: 404
+  - host: https://conduent.com
+    note: Every path 301s to https://www.conduent.com/ (same results as above).
+    documents:
+      - path: /.well-known/security.txt
+        status: 301
+      - path: /.well-known/openid-configuration
+        status: 301
+      - path: /.well-known/oauth-authorization-server
+        status: 301
+      - path: /.well-known/oauth-protected-resource
+        status: 301
+      - path: /.well-known/api-catalog
+        status: 301
+      - path: /.well-known/ai-plugin.json
+        status: 301
+      - path: /.well-known/apis.json
+        status: 301
+      - path: /apis.json
+        status: 301
+  - host: https://insights.conduent.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/oauth-protected-resource
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+      - path: /.well-known/ucp.json
+        status: 404
+      - path: /.well-known/acp.json
+        status: 404
+      - path: /.well-known/aauth-resource.json
+        status: 404
+      - path: /.well-known/apis.json
+        status: 404
+      - path: /apis.json
+        status: 404
+      - path: /apis.yml
+        status: 404
+      - path: /.well-known/agent-card.json
+        status: 404
+      - path: /.well-known/agent.json
+        status: 404
+      - path: /llms.txt
+        status: 404
+      - path: /openapi.json
+        status: 404
+  - host: https://help.knowledgeconnection.conduent.info
+    note: >-
+      Extension-less paths (openid-configuration, oauth-authorization-server, oauth-protected-resource,
+      api-catalog) answer 200 with the ~356 KB catch-all help page; .json/.txt paths answer a hard 404.
+      Recorded as misses.
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 200
+        hit: false
+        note: catch-all help page HTML, not a document
+      - path: /.well-known/oauth-authorization-server
+        status: 200
+        hit: false
+        note: catch-all help page HTML, not a document
+      - path: /.well-known/oauth-protected-resource
+        status: 200
+        hit: false
+        note: catch-all help page HTML, not a document
+      - path: /.well-known/api-catalog
+        status: 200
+        hit: false
+        note: catch-all help page HTML, not a document
+      - path: /.well-known/ai-plugin.json
+        status: 404
+      - path: /.well-known/ucp.json
+        status: 404
+      - path: /.well-known/acp.json
+        status: 404
+      - path: /.well-known/aauth-resource.json
+        status: 404
+      - path: /.well-known/apis.json
+        status: 404
+      - path: /apis.json
+        status: 404
+      - path: /apis.yml
+        status: 404
+      - path: /.well-known/agent-card.json
+        status: 404
+      - path: /.well-known/agent.json
+        status: 404
+      - path: /llms.txt
+        status: 404
+      - path: /openapi.json
+        status: 404
+  - host: https://api.conduent.com
+    note: NXDOMAIN -- the host named as baseURL by the 2026-04 bulk sweep does not exist in DNS.
+    documents: []
+  - host: https://developer.conduent.com
+    note: NXDOMAIN -- the host named as humanURL by the 2026-04 bulk sweep does not exist in DNS.
+    documents: []
