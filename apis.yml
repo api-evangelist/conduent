@@ -32,6 +32,16 @@ tags:
 - Government
 - Healthcare
 - Transportation
+- Financial-Services
+- Customer Experience
+- Learning
+- Webhook
+tags_raw:
+- Business Process Services
+- Technology
+- Government
+- Healthcare
+- Transportation
 - Financial Services
 - Customer Experience
 - Learning
@@ -51,6 +61,11 @@ apis:
 - aid: conduent:conduent-knowledge-connection
   name: Conduent Knowledge Connection
   tags:
+  - Learning
+  - Webhook
+  - Technology
+  - Business Process Services
+  tags_raw:
   - Learning
   - Webhooks
   - Technology
