@@ -1,27 +1,25 @@
-# Kin Score artifact — conduent — 2026-08-28T221322
+# Kin Score artifact — conduent — 2026-10-03T000835
 # The API Evangelist rating (https://github.com/api-evangelist/kin-score). Generated; do not edit.
 ---
 kin_score:
   slug: conduent
-  schema_version: 0.15.1
-  scored_at: '2026-08-28'
-  run_ts: 2026-08-28T221322
-  composite: 11.0
-  band: emerging
+  schema_version: 0.23.0
+  scored_at: '2026-10-03'
+  run_ts: 2026-10-03T000835
+  composite: 33.9
+  band: thin
   facets:
-    discoverability: 50.0
-    contract_quality: 0.0
-    governance: 0.0
-    operational_transparency: 7.9
-    developer_ergonomics: 11.9
-    commercial_clarity: 13.2
-    contract_governance: 0.0
-    access_clarity: 13.2
+    discoverability: 67.9
+    contract_quality: 39.0
+    contract_governance: 18.2
+    operational_transparency: 31.6
+    developer_ergonomics: 16.7
+    access_clarity: 34.2
   agent_readiness:
-    score: 2.5
-    band: human-only
+    score: 17.9
+    band: agent-aware
     dimensions:
-      spec_presence: false
+      spec_presence: true
       agentic_access: false
       reversibility_documented: false
       mcp_server: false
@@ -29,8 +27,8 @@ kin_score:
       idempotency: false
       error_semantics: false
       openapi_examples: false
-      rate_limit_signal: documented
-      event_surface_described: false
+      rate_limit_signal: derived
+      event_surface_described: true
       agent_skills: false
       well_known_catalog: false
       consent_identity: false
@@ -40,3 +38,12 @@ kin_score:
       protected_resource_metadata: false
       dynamic_client_registration: false
       agentic_commerce: false
+  regulatory:
+    applies: true
+    regime: Health
+    regime_id: health
+    score: 18.0
+    matched_via: tags
+  provenance:
+    mcp: derived
+    conformance: first-party
