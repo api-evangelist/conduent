@@ -89,6 +89,8 @@ apis:
   - url: changelog/conduent-changelog.yml
     type: ChangeLog
 common:
+- type: FinOps
+  url: finops/conduent-finops.yml
 - url: https://www.news.conduent.com/rss.xml
   type: BlogRSS
 - type: DomainSecurity
