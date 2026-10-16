@@ -2,11 +2,18 @@
   "repo": "conduent",
   "feeds": [
     {
-      "source": "https://www.conduent.com",
-      "feed_url": "https://www.conduent.com/feed/",
+      "source": "https://www.news.conduent.com/rss.xml",
+      "feed_url": "https://www.news.conduent.com/rss.xml",
+      "title": "",
+      "saved": 1,
+      "method": "feed"
+    },
+    {
+      "source": "https://insights.conduent.com/conduent-blog",
+      "feed_url": "https://insights.conduent.com/conduent-blog",
       "title": "",
       "saved": 0,
-      "method": "discovered"
+      "method": "none"
     },
     {
       "source": "https://www.conduent.com/feed/",
@@ -16,8 +23,8 @@
       "method": "feed"
     }
   ],
-  "fetched": "2026-10-03T12:30:02Z",
-  "post_count": 5,
+  "fetched": "2026-10-10T13:15:00Z",
+  "post_count": 6,
   "feed_nature": "undetermined",
   "feed_nature_basis": null,
   "feed_nature_note": "Whether these posts are the vendor publishing or its support community, decided on the URL path grammar of the saved posts -- not the hostname, which carries both on Khoros, and not author diversity, which flags large vendor blogs as forums. 'undetermined' means undetermined."
