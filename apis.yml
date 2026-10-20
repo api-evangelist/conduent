@@ -1,7 +1,11 @@
 aid: conduent
+
 url: https://raw.githubusercontent.com/api-evangelist/conduent/refs/heads/main/apis.yml
+
 name: Conduent
+
 type: Index
+
 deliveryModel:
   model: unknown
   open_source: false
@@ -13,6 +17,7 @@ deliveryModel:
   - none
   generated: '2026-08-28'
   method: derived
+
 accessModel:
   pricing: enterprise
   onboarding: unknown
@@ -25,7 +30,9 @@ accessModel:
   - plans
   generated: '2026-07-22'
   method: derived
+
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/conduent.png
+
 tags:
 - Business Process Services
 - Technology
@@ -36,6 +43,7 @@ tags:
 - Customer Experience
 - Learning
 - Webhook
+
 tags_raw:
 - Business Process Services
 - Technology
@@ -47,6 +55,7 @@ tags_raw:
 - Learning
 - Webhooks
 - Financial-Services
+
 description: 'Conduent Incorporated (Nasdaq: CNDT) is a US business process services and solutions company
   headquartered in Florham Park, New Jersey, delivering customer experience management, finance and procurement,
   human capital, integrated digital solutions, legal and compliance analytics, government and Medicaid
@@ -55,40 +64,24 @@ description: 'Conduent Incorporated (Nasdaq: CNDT) is a US business process serv
   publishes no developer portal, no API reference and no machine-readable contract, and programmatic access
   is provisioned inside enterprise services contracts. The one publicly documented interface is the webhook
   event catalog of its Knowledge Connection learning platform.'
+
 created: '2026-04-19'
+
 modified: '2026-10-06'
+
 specificationVersion: '0.23'
-apis:
-- aid: conduent:conduent-knowledge-connection
-  name: Conduent Knowledge Connection
-  tags:
-  - Learning
-  - Webhook
-  - Technology
-  - Business Process Services
-  tags_raw:
-  - Learning
-  - Webhooks
-  - Technology
-  - Business Process Services
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  baseURL: https://{portal}.knowledgeconnection.conduent.com
-  humanURL: https://help.knowledgeconnection.conduent.info/
-  description: 'Knowledge Connection (marketed to learners as Learner Community) is Conduent''s learning
-    platform, deployed one portal per customer on a subdomain of knowledgeconnection.conduent.com; the
-    base URL is templated because the tenant segment is required (the apex does not resolve; pmi.knowledgeconnection.conduent.com
-    returns HTTP 200). It is the only Conduent product with an anonymously readable integration surface:
-    eight documented webhook events, a contract-granted partner Request Launch URL call, and LTI, xAPI/TinCan,
-    SCORM/AICC and SAML 2.0 support. Event names and trigger semantics are public; payload schemas, signing
-    and retry behaviour are not, and no OpenAPI or AsyncAPI is published.'
-  properties:
-  - url: https://help.knowledgeconnection.conduent.info/
-    type: Documentation
-  - url: asyncapi/conduent-knowledge-connection-webhooks.yml
-    type: Webhooks
-  - url: changelog/conduent-changelog.yml
-    type: ChangeLog
+
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
+
 common:
+- type: Hosts
+  url: hosts/conduent-hosts.yml
+- type: IntegrationEdges
+  url: integrations/conduent-integration-edges.yml
+- type: Vendors
+  url: vendors/conduent-vendors.yml
 - type: FinOps
   url: finops/conduent-finops.yml
 - url: https://www.news.conduent.com/rss.xml
@@ -119,14 +112,10 @@ common:
   url: changelog/conduent-changelog.yml
 - type: Lifecycle
   url: lifecycle/conduent-lifecycle.yml
-- type: Packages
-  url: packages/conduent-packages.yml
 - type: Conformance
   url: conformance/conduent-conformance.yml
 - type: Conventions
   url: conventions/conduent-conventions.yml
-- type: LLMsTxt
-  url: llms/conduent-llms.txt
 - type: RegulatoryPosture
   url: regulatory/conduent-regulatory-posture.yml
 - type: DataSubjectRequest
@@ -135,14 +124,44 @@ common:
   url: plans/conduent-plans-pricing.yml
 - type: RateLimits
   url: rate-limits/conduent-rate-limits.yml
-maintainers:
-- FN: Kin Lane
-  email: kin@apievangelist.com
+
+apis:
+- aid: conduent:conduent-knowledge-connection
+  name: Conduent Knowledge Connection
+  tags:
+  - Learning
+  - Webhook
+  - Technology
+  - Business Process Services
+  tags_raw:
+  - Learning
+  - Webhooks
+  - Technology
+  - Business Process Services
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  baseURL: https://{portal}.knowledgeconnection.conduent.com
+  humanURL: https://help.knowledgeconnection.conduent.info/
+  description: 'Knowledge Connection (marketed to learners as Learner Community) is Conduent''s learning
+    platform, deployed one portal per customer on a subdomain of knowledgeconnection.conduent.com; the
+    base URL is templated because the tenant segment is required (the apex does not resolve; pmi.knowledgeconnection.conduent.com
+    returns HTTP 200). It is the only Conduent product with an anonymously readable integration surface:
+    eight documented webhook events, a contract-granted partner Request Launch URL call, and LTI, xAPI/TinCan,
+    SCORM/AICC and SAML 2.0 support. Event names and trigger semantics are public; payload schemas, signing
+    and retry behaviour are not, and no OpenAPI or AsyncAPI is published.'
+  properties:
+  - url: https://help.knowledgeconnection.conduent.info/
+    type: Documentation
+  - url: asyncapi/conduent-knowledge-connection-webhooks.yml
+    type: Webhooks
+  - url: changelog/conduent-changelog.yml
+    type: ChangeLog
+
 x-enrichment:
-  date: '2026-09-19'
+  date: '2026-10-19'
   status: minimal
-  artifacts_added: 8
-  pass: local-v3
+  artifacts_added: 0
+  pass: local-v5
+
 x-coverage:
   state: none
   reason: no-developer-program
@@ -164,4 +183,4 @@ x-coverage:
     status: 404
   - url: https://help.knowledgeconnection.conduent.info/help/admin/integrations/webhooks
     status: 200
-  checked: '2026-09-19'
+  checked: '2026-10-19'

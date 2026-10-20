@@ -16,7 +16,7 @@ description: >-
   page it is stated on, and sets conforms only where the claim is the company's own published
   statement about a product it operates. Nothing here is derived from a specification, because no
   Conduent specification is published.
-conformance:
+standards:
   - id: hl7-fhir-r4
     name: HL7 FHIR 4.0.1
     conforms: true

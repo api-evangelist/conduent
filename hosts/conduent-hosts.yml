@@ -1,0 +1,147 @@
+generated: '2026-10-20'
+method: derived
+source: the pre-flight dossier, apis.yml pointers, spec servers, well-known, vendors -- nothing fetched here
+generator: derive-hosts.py
+summary:
+  hosts: 12
+  own: 8
+  other_domain: 2
+  platform: 2
+  roles:
+  - api
+  - marketing
+  - other
+  - source
+  - support
+  - website
+hosts:
+- host: api.conduent.com
+  found_by:
+  - contract-discovery
+  types: []
+  serves: []
+  registrable_domain: conduent.com
+  role: api
+  relation: own
+- host: api.conduent.info
+  found_by:
+  - contract-discovery
+  types: []
+  serves: []
+  registrable_domain: conduent.info
+  role: api
+  relation: other-domain
+- host: careers.conduent.com
+  found_by:
+  - probed
+  - site-links
+  - well-known
+  types: []
+  serves: []
+  registrable_domain: conduent.com
+  role: other
+  relation: own
+- host: downloads.conduent.com
+  found_by:
+  - probed
+  - site-links
+  - well-known
+  types: []
+  serves: []
+  registrable_domain: conduent.com
+  role: other
+  relation: own
+- host: github.com
+  found_by:
+  - pointer
+  types:
+  - GitHubOrganization
+  serves: []
+  registrable_domain: github.com
+  role: source
+  relation: platform
+- host: help.knowledgeconnection.conduent.info
+  found_by:
+  - apis[]
+  - probed
+  - docs-index
+  - contract-discovery
+  - well-known
+  types: []
+  serves:
+  - docs
+  registrable_domain: conduent.info
+  role: support
+  relation: other-domain
+- host: insights.conduent.com
+  found_by:
+  - pointer
+  - probed
+  - site-links
+  - contract-discovery
+  - well-known
+  types:
+  - Blog
+  serves: []
+  registrable_domain: conduent.com
+  role: marketing
+  relation: own
+- host: investor.conduent.com
+  found_by:
+  - probed
+  - site-links
+  - well-known
+  types: []
+  serves: []
+  registrable_domain: conduent.com
+  role: other
+  relation: own
+- host: www.conduent.com
+  found_by:
+  - pointer
+  - probed
+  - well-known
+  - vendor-detect
+  types:
+  - Website
+  - Leadership
+  - Support
+  - PrivacyPolicy
+  - TermsOfService
+  serves:
+  - cdn
+  vendor: imperva
+  registrable_domain: conduent.com
+  role: website
+  relation: own
+- host: www.linkedin.com
+  found_by:
+  - pointer
+  types:
+  - LinkedIn
+  serves: []
+  registrable_domain: linkedin.com
+  role: other
+  relation: platform
+- host: www.news.conduent.com
+  found_by:
+  - pointer
+  - probed
+  - contract-discovery
+  - well-known
+  types:
+  - BlogRSS
+  - Newsroom
+  serves: []
+  registrable_domain: conduent.com
+  role: marketing
+  relation: own
+- host: '{portal}.knowledgeconnection.conduent.com'
+  found_by:
+  - apis[]
+  types: []
+  serves:
+  - api
+  registrable_domain: conduent.com
+  role: other
+  relation: own

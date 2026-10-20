@@ -2,6 +2,7 @@ specification: API Commons RegulatoryPosture
 specificationVersion: '0.1'
 generated: '2026-09-19'
 method: searched
+source: https://www.conduent.com/privacy-policy/
 probe: true
 provider: Conduent
 providerId: conduent
