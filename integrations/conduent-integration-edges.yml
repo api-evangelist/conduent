@@ -1,7 +1,17 @@
-generated: '2026-10-13'
+generated: '2026-10-19'
 method: searched
+source:
+- https://zapier.com/apps/conduent/integrations
+- https://n8n.io/integrations/conduent/
+- https://composio.dev/toolkits/conduent
+- https://monid.ai/tools/conduent
 checked:
 - https://azuremarketplace.microsoft.com/
+- https://composio.dev/toolkits/conduent
+- https://monid.ai/tools/conduent
+- https://n8n.io/integrations/conduent/
+- https://zapier.com/apps/conduent/integrations
+summary: null
 marketplace_apps: []
 edges:
 - partner_name: Microsoft Azure Marketplace
@@ -19,3 +29,4 @@ edges:
   seller_name: Conduent Incorporated
   detected_by: sweep-cloud-marketplaces.py
   detected: '2026-10-13'
+templates: []
