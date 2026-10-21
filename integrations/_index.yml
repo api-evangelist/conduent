@@ -88,3 +88,28 @@
     detected: '2026-10-20'
   status: not-a-workflow
   arazzo: null
+- slug: conduent-asc-x12
+  label: ASC X12
+  partner_name: ASC X12
+  category: EDI standards development (membership)
+  type: register
+  channel: standard-directory
+  evidence: https://x12.org/membership/list-of-members
+  source: edge
+  relationship: standard-participant
+  contract_reference:
+    register: X12 members list (x12.org/membership/list-of-members)
+    spec_file: null
+    standard: ASC X12 (HIPAA EDI transactions)
+    role: member
+    registered_name: Conduent
+    matched_domain: conduent.com
+    matched_by: domain
+    market_fit: own apis.yml tags carry a health administration / health IT term
+    detected_by: sweep-payer-interop-caqh-core.py
+    detected: '2026-10-21'
+    identity: wikidata Q28404490 'Conduent' P856 http://conduent.com
+    identity_source: wikidata P856 (labelled provenance step; Kin 2026-10-15 decision 1)
+    signal_note: membership = participation
+  status: not-a-workflow
+  arazzo: null
