@@ -1,0 +1,61 @@
+name: Conduent API Plans
+specification: API Commons Plans
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
+provider: Conduent
+providerId: conduent
+created: '2026-05-04'
+# Provenance stamped 2026-08-11: this artifact was written by the API Evangelist
+# bulk sweep dated 2026-05-04, not harvested from the provider. See roadmap#35.
+method: generated
+modified: '2026-05-05'
+reconciled: false
+tags:
+  - Business Process Services
+  - Technology
+description: Conduent does not publish a self-serve, public developer pricing surface. Programmatic access
+  to Conduent platform services is delivered through enterprise contracts and BPO engagements with named
+  customers (transportation, government, commercial). Pricing is not publicly listed.
+notes: Conduent does not publish a public pricing page or developer portal pricing tiers. Any plan numbers
+  in this file are placeholders; reconcile against the customer's enterprise services contract.
+sources:
+  - https://www.conduent.com
+plans:
+  - id: conduent-enterprise
+    name: Enterprise Services Contract
+    type: enterprise
+    description: API access to Conduent platform services is included in the customer's enterprise BPO
+      / managed-services contract. Quotas, scopes, and SLAs are negotiated per customer.
+    entries:
+      - label: API Access
+        description: Programmatic access scoped per enterprise services contract
+        name: api_access
+        type: subscription
+        metric: varies
+        limit: 'see Conduent contract'
+        timeFrame: year
+        geo: configurable
+        unit: 1
+        price: 'see Conduent contract'
+        userMultiplied: false
+    elements:
+      - name: Conduent API
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
+x-canonical:
+  generated: '2026-11-01'
+  vocabulary: engine/economics/plans-canonical.yml
+  models:
+  - subscription
+  units:
+  - negotiated
+  plans:
+  - name: Enterprise Services Contract
+    access: enterprise
+    model: subscription
+    model_how: derived
+    units:
+    - negotiated
+    periods:
+    - year
